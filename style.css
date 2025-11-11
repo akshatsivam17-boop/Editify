@@ -1,0 +1,151 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1e1e1e, #111);
+}
+
+.hero-title {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    color: #00b3ff;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 80px 20px;
+    background-color: #0a0a0a;
+}
+
+.video-container {
+    width: 240px;           /* narrow like phone screen */
+    aspect-ratio: 9 / 16;   /* vertical format */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    background: #000;
+}
+
+.video-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00b3ff;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-container {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #111;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    color: #00b3ff;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    color: #00b3ff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: #fff;
+}
+
+.credit {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .video-container {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+/* Scroll Reveal Animation */
+.video-container {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.video-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
